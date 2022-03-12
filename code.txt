@@ -1,0 +1,16 @@
+Creacion del proyecto
+1. Utilizamos el comando 
+composer create-project laravel/laravel example-app
+para crear el proyecto de en laravel 
+2. Instalamos vuejs dentro de nuestro proyecto con 
+composer require laravel/ui
+php artisan ui vue
+php artisan ui vue --auth
+npm install
+npm run dev
+3. Instalamos y configuramos cloudynary
+https://github.com/cloudinary-labs/cloudinary-laravel/
+con los comandos 
+composer require cloudinary-labs/cloudinary-laravel
+php artisan vendor:publish --provider="CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider" --tag="cloudinary-laravel-config"
+nota: en caso de que salira un error al momento de ejecutar el comando npm run dev eliminaremos el node_module de nustro proyecto
