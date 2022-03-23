@@ -13,4 +13,9 @@ https://github.com/cloudinary-labs/cloudinary-laravel/
 con los comandos 
 composer require cloudinary-labs/cloudinary-laravel
 php artisan vendor:publish --provider="CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider" --tag="cloudinary-laravel-config"
-nota: en caso de que salira un error al momento de ejecutar el comando npm run dev eliminaremos el node_module de nustro proyecto
+nota: en caso de que salira un error al momento de ejecutar el comando npm run dev eliminaremos el node_module de nuestro proyecto git 
+
+4. Creamos nuesta base de datos con el uso de las migraciones que nos ofrece laravel.
+
+
+
