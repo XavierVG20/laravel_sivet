@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ventas extends Model
+class ingresos extends Model
 {
     use HasFactory;
     protected $fillable = [
@@ -16,11 +16,13 @@ class ventas extends Model
         'total'
     ];
 
+    public function clientes(){
+        return $this->belongsTo('App\Models\clientes');
+    }
+
     public function user(){
         return $this->belongsTo('App\Models\User');
     }
 
-    public function clientes(){
-        return $this->belongsTo('App\Models\clientes');
-    }
+    
 }

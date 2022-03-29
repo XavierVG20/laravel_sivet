@@ -21,6 +21,7 @@ class CreateProveedoresTable extends Migration
             $table->string('telefono');
             $table->string('email');
             $table->string('n_contacto');
+            $table->string('t_contacto');
             $table->timestamps();
         });
     }

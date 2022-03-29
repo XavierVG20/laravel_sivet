@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class proveedores extends Model
 {
     use HasFactory;
+    protected $fillabl = ['empresa','n_ruc',
+    'direccion',
+    'telefono',
+    'email',
+    'n_contacto',
+    't_contacto'];
+
+    public function ingresos()
+    {
+        return $this->hasOne('App\Models\ingresos');
+    }
 }

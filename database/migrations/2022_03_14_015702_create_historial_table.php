@@ -15,13 +15,13 @@ class CreateHistorialTable extends Migration
     {
         Schema::create('historial', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('desripcion');
+            $table->string('descripcion');
             $table->string('diagnostico');
             $table->string('tratamiento');
-            $table->integer('id_cliente')->unsigned();
-            $table->foreign('id_cliente')->nullable()
+            $table->integer('id_mascota')->unsigned();
+            $table->foreign('id_mascota')->nullable()
             ->references('id')
-            ->on('clientes')
+            ->on('mascotas')
             ->onDelete('cascade');
             $table->integer('id_cita')->nullable()->unsigned();
             $table->foreign('id_cita')->nullable()

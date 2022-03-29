@@ -15,7 +15,26 @@ composer require cloudinary-labs/cloudinary-laravel
 php artisan vendor:publish --provider="CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider" --tag="cloudinary-laravel-config"
 nota: en caso de que salira un error al momento de ejecutar el comando npm run dev eliminaremos el node_module de nuestro proyecto git 
 
-4. Creamos nuesta base de datos con el uso de las migraciones que nos ofrece laravel.
+4. Creamos nuestra base de datos con el uso de las migraciones que nos ofrece laravel.
+
+5. creamos todos muestor modelos y controladores con el comndo 
+php artisa make:model nombre_ modelso  -c
+
+6. colocamos dentro de cada model los macopos que usaremos para el ingreo de nustros datos.
+
+7. Creamos nuestros factories para poder ingresas nustros datos de prueba de nustra tabla cleintes, proveedores y usuarios 
+utlizano el comando
+php artisan make:factory nombreFactory --model= modelo
+
+ademas creamos seeders para el ingreso de los datos de las categorias, articulos y mascotas 
+con el comando
+php artisan make:seeder nombreSeeder
+ al inalizar ejecutamos el comando 
+ php artisa db:seed para elejecutar lo procesos
+
+ 
+
+
 
 
 

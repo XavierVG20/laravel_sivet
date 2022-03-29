@@ -24,7 +24,10 @@ class CreateMascotasTable extends Migration
             $table->string('raza');
             $table->string('sexo');
             $table->string('color');
-            $table->date('fecha_nacimineto');
+            $table->date('fecha_nacimiento');
+            $table->integer('id_media')->nullable()->unsigned();
+            $table->foreign('id_media')->references('id')->on('media');
+         
             $table->timestamps();
         });
     }

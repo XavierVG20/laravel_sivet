@@ -17,7 +17,7 @@ class CreateDetalleVentaServicioTable extends Migration
             $table->increments('id');
             $table->integer('id_venta')->unsigned();
             $table->foreign('id_venta')->references('id')->on('ventas');
-     
+            $table->string('descripcion');
             $table->integer('cantidad');
             $table->decimal('precio');
             $table->timestamps();
