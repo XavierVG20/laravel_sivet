@@ -23,7 +23,7 @@ class CreateArticulosTable extends Migration
             $table->integer('stock');
             $table->decimal('precio_venta');
             $table->integer('id_media')->nullable()->unsigned();
-            $table->foreign('id_media')->references('id')->on('media');
+            $table->foreign('id_media')->references('id_media')->on('media');
             $table->boolean('condicion');
 
             $table->timestamps();

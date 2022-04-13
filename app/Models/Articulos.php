@@ -15,11 +15,13 @@ class articulos extends Model
         'descripcion',
         'stock',
         'precio_venta',
+        'id_media',
         'condicion'
     ];
 
-    public function categorias()
+    public function categoria()
     {
         return $this->belongsTo('App\Models\categorias');
     }
+
 }

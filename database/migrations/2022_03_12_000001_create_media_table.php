@@ -9,7 +9,7 @@ class CreateMediaTable extends Migration
     public function up()
     {
         Schema::create('media', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_media');
             $table->string('public_id');
             $table->morphs('medially');
             $table->text('file_url');

@@ -22,7 +22,7 @@ class CreateEmpresaTable extends Migration
             $table->string('email');
             $table->string('descripcion');
             $table->integer('id_media')->nullable()->unsigned();
-            $table->foreign('id_media')->references('id')->on('media');
+            $table->foreign('id_media')->references('id_media')->on('media');
             $table->timestamps();
         });
     }

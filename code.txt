@@ -32,6 +32,13 @@ php artisan make:seeder nombreSeeder
  al inalizar ejecutamos el comando 
  php artisa db:seed para elejecutar lo procesos
 
+ 8. configuramos nusetro proyecto laravel para crear nuestra api
+ descomentamos  protected $namespace = 'App\\Http\\Controllers'; de nustro archivo RouterServiceProvider.php
+
+ 9. creamos nustro controlador de usurio y sus funciones y configuramos las rutas
+
+
+
  
 
 
