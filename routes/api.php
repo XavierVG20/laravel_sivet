@@ -7,7 +7,8 @@ use App\Http\Controllers\Api\CategoriaController;
 use App\Http\Controllers\Api\ArticulosController;
 use App\Http\Controllers\Api\ClientesController;
 use App\Http\Controllers\Api\MascotasController;
-
+use  App\Http\Controllers\Api\ProveedoresController;
+use App\Http\Controllers\Api\CitasController;
 
 
 /*
@@ -54,6 +55,18 @@ Route::group( ['middleware' => ["auth:sanctum"]], function(){
  Route::get('mascotas/{id}', [MascotasController::class, 'show']);
  Route::put('mascotas/{id}', [MascotasController::class, 'update']);
 
+ /**proveedores */
+ Route::get('proveedores',[ProveedoresController::class, 'index']);
+ Route::post('proveedores',[ProveedoresController::class, 'store']);
+ Route::get('proveedores/{id}',[ProveedoresController::class, 'show']);
+ Route::put('proveedores/{id}',[ProveedoresController::class, 'update']);
+
+
+/**citas */
+Route::get('citas', [CitasController::class, 'index']);
+Route::post('citas', [CitasController::class, 'store']);
+Route::get('citas/{id}', [CitasController::class, 'show']);
+Route::put('citas/{id}', [CitasController::class, 'update']);
 
 
 

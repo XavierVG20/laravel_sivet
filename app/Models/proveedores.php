@@ -8,7 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class proveedores extends Model
 {
     use HasFactory;
-    protected $fillabl = ['empresa','n_ruc',
+    protected $table = 'proveedores';
+    protected $fillabl = [
+    'empresa',
+    'n_ruc',
     'direccion',
     'telefono',
     'email',
