@@ -9,7 +9,7 @@ class ingresos extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id_cliente',
+        'id_proveedor',
         'id_usuario',
         'tipo_comprobante',
         'impuestos',

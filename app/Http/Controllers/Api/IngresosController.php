@@ -4,10 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-use App\Models\historial;
-
-class HistorialController extends Controller
+use App\Models\ingresos;
+class IngresosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,18 +17,18 @@ class HistorialController extends Controller
         $buscar = $request->buscar;
         $criterio = $request->criterio;
         if ($buscar == "") {
-            $historial =  historial::select('*')
+            $ingresos =  ingresos::select('*')
             ->get();
         } else{
-            $historial =  historal::select('*')
+            $ingresos =  ingresos::select('*')
             ->where($criterio, 'like', '%'. $buscar . '%')
             ->get();
            
         }
         return response()->json([
             "status" => 200,
-            "msg" => "historial",
-            "data" =>  $historial
+            "msg" => "ingresos",
+            "data" =>  $ingresos
         ]); 
     }
 
@@ -42,23 +40,21 @@ class HistorialController extends Controller
      */
     public function store(Request $request)
     {
-        $historial = new historial();
-
-        $historial->descripcion = $request->descripcion;
-        $historial->diagnostico = $request->diagnostico;
-        $historial->tratamiento = $request->tratamiento;
-        $historial->id_mascota = $request->id_mascota;
-        $historial->id_cita = $request->id_cita;
-
-        $historial->save();
-
-         return response()->json([
-            "status" => 200,
-            "msg" => "historial registrado",
-            "data" =>  $historial
-        ]); 
-
-
+        $ingreso = new ingresos();
+        $ingreso->id_proveedor = $request->id_proveedor;
+        $ingreso->id_usuario = $request->id_usuario;
+        $ingreso->tipo_comprobante = $request->tipo_comprobante;
+        $ingreso->impuestos = $request->impuestos;
+        $ingreso->total = $request->total;
+ 
+        $ingreso->save();
+ 
+        return response()->json([
+         "status" => 200,
+         "msg" => "ingreso registrada",
+         "data" =>  $ingreso
+     ]);
+ 
     }
 
     /**
@@ -69,12 +65,14 @@ class HistorialController extends Controller
      */
     public function show($id)
     {
-        $historial = historial::findOrFail($id);
+        $ingreso = ingresos::findOrFail($id);
+     
+
         return response()->json([
-            "status" => 200,
-            "msg" => "historial",
-            "data" =>  $historial
-        ],200);
+         "status" => 200,
+         "msg" => "ingreso",
+         "data" =>  $ingreso
+     ]);
     }
 
     /**
@@ -86,21 +84,20 @@ class HistorialController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $historial = historial::findOrFail($id);
-
-        $historial->descripcion = $request->descripcion;
-        $historial->diagnostico = $request->diagnostico;
-        $historial->tratamiento = $request->tratamiento;
-        $historial->id_mascota = $request->id_mascota;
-        $historial->id_cita = $request->id_cita;
-
-        $historial->save();
-
-         return response()->json([
-            "status" => 200,
-            "msg" => "historial actualizado",
-            "data" =>  $historial
-        ]); 
+        $ingreso = ingresos::findOrFail($id);
+        $ingreso->id_proveedor = $request->id_proveedor;
+        $ingreso->id_usuario = $request->id_usuario;
+        $ingreso->tipo_comprobante = $request->tipo_comprobante;
+        $ingreso->impuestos = $request->impuestos;
+        $ingreso->total = $request->total;
+ 
+        $ingreso->save();
+ 
+        return response()->json([
+         "status" => 200,
+         "msg" => "ingreso actualizado",
+         "data" =>  $ingreso
+     ]);
     }
 
     /**

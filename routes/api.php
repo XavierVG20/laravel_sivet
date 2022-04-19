@@ -7,8 +7,15 @@ use App\Http\Controllers\Api\CategoriaController;
 use App\Http\Controllers\Api\ArticulosController;
 use App\Http\Controllers\Api\ClientesController;
 use App\Http\Controllers\Api\MascotasController;
-use  App\Http\Controllers\Api\ProveedoresController;
+use App\Http\Controllers\Api\ProveedoresController;
 use App\Http\Controllers\Api\CitasController;
+use App\Http\Controllers\Api\HistorialController;
+use App\Http\Controllers\Api\VentasController;
+use App\Http\Controllers\Api\DetalleVentasController;
+use App\Http\Controllers\Api\IngresosController;
+use App\Http\Controllers\Api\DetalleIngresosController;
+
+
 
 
 /*
@@ -68,8 +75,42 @@ Route::post('citas', [CitasController::class, 'store']);
 Route::get('citas/{id}', [CitasController::class, 'show']);
 Route::put('citas/{id}', [CitasController::class, 'update']);
 
+/**historiales */
+
+Route::get('historial', [HistorialController::class, 'index']);
+Route::post('historial', [HistorialController::class, 'store']);
+Route::get('historial/{id}', [HistorialController::class, 'show']);
+Route::put('historial/{id}', [HistorialController::class, 'update']);
+
+/**ventas */
+Route::get('venta', [VentasController::class, 'index']);
+Route::post('venta', [VentasController::class, 'store']);
+Route::get('venta/{id}', [VentasController::class, 'show']);
+Route::put('venta/{id}', [VentasController::class, 'update']);
 
 
+/**detalle Ventas */
+
+Route::get('detalle-venta', [DetalleVentasController::class, 'index']);
+Route::post('detalle-venta', [DetalleVentasController::class, 'store']);
+Route::get('detalle-venta/{id}', [DetalleVentasController::class, 'show']);
+Route::put('detalle-venta/{id}', [DetalleVentasController::class, 'update']);
+Route::delete('detalle-venta/{id}', [DetalleVentasController::class, 'destroy']);
+
+/**ingresos */
+Route::get('ingreso', [ IngresosController::class, 'index']);
+Route::post('ingreso', [IngresosController::class, 'store']);
+Route::get('ingreso/{id}', [IngresosController::class, 'show']);
+Route::put('ingreso/{id}', [IngresosController::class, 'update']);
+
+
+/**detalle ingresos */
+
+Route::get('detalle-ingreso', [DetalleIngresosController::class, 'index']);
+Route::post('detalle-ingreso', [DetalleIngresosController::class, 'store']);
+Route::get('detalle-ingreso/{id}', [DetalleIngresosController::class, 'show']);
+Route::put('detalle-ingreso/{id}', [DetalleIngresosController::class, 'update']);
+Route::delete('detalle-ingreso/{id}', [DetalleIngresosController::class, 'destroy']);
 
 
 
