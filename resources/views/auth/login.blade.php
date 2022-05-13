@@ -1,14 +1,16 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+<div class="login-box">
+  <div class="login-logo">
+    <a href="{{ url('/') }}"><b>Sistema</b>SIVET</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+    <p class="login-box-msg">Acceder</p>
+
+    <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="row mb-3">
@@ -65,9 +67,8 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
+  <!-- /.login-box-body -->
 </div>
+<!-- /.login-box -->
 @endsection
