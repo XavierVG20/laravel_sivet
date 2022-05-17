@@ -3,10 +3,10 @@
 @section('htmlheader')
 @include('partials.htmlheader')
 @show
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue layout-top-nav">
     <div id="app" class="wrapper">
     @include('partials.mainheader')
-    @include('partials.mainsidebar')
+
     <div class="content-wrapper">
         <main class="py-4">
             @yield('content')
